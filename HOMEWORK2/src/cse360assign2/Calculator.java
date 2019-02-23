@@ -22,7 +22,7 @@ public class Calculator {
 	 * @return - result of all the operations
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	
 	/**
@@ -31,7 +31,7 @@ public class Calculator {
 	 * @param value - integer applied to the function
 	 */
 	public void add (int value) {
-		
+		total += value;
 	}
 	
 	/**
@@ -40,7 +40,7 @@ public class Calculator {
 	 * @param value - integer applied to the function
 	 */
 	public void subtract (int value) {
-		
+		total -= value;
 	}
 	
 	/**
@@ -49,7 +49,7 @@ public class Calculator {
 	 * @param value - integer applied to the function
 	 */
 	public void multiply (int value) {
-		
+		total *= value;
 	}
 	
 	/**
@@ -58,7 +58,9 @@ public class Calculator {
 	 * @param value - integer applied to the function
 	 */
 	public void divide (int value) {
-		
+		if (value == 0)
+			total = 0;
+		total /= value;
 	}
 	
 	/**
