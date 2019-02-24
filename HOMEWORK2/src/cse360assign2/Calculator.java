@@ -7,13 +7,15 @@ package cse360assign2;
 public class Calculator {
 		
 		private int total;
+		private String history;
 	/**
-	 * Calculator - constructor for the class
-	 * 
+	 * Calculator - constructor for the class, performs 4 different operations
+	 * addition, subtraction, multiplication, and division
 	 * @param total - set the total to 0
 	 */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		history = " 0 ";
 	}
 	
 	/**
@@ -26,34 +28,37 @@ public class Calculator {
 	}
 	
 	/**
-	 * add - adds the inputed values
+	 * add - adds the inputed values to the total
 	 * 
 	 * @param value - integer applied to the function
 	 */
 	public void add (int value) {
 		total += value;
+		history += " + " + value;
 	}
 	
 	/**
-	 * subtract - subtracts the inputed values
+	 * subtract - subtracts the inputed values to the total
 	 * 
 	 * @param value - integer applied to the function
 	 */
 	public void subtract (int value) {
 		total -= value;
+		history += " - " + value;
 	}
 	
 	/**
-	 * multiply - multiplies the inputed values
+	 * multiply - multiplies the inputed values to the total
 	 * 
 	 * @param value - integer applied to the function
 	 */
 	public void multiply (int value) {
 		total *= value;
+		history += " * " + value;
 	}
 	
 	/**
-	 * divide - divides the inputed values
+	 * divide - divides the inputed values total
 	 * 	
 	 * @param value - integer applied to the function
 	 */
@@ -61,6 +66,7 @@ public class Calculator {
 		if (value == 0)
 			total = 0;
 		total /= value;
+		history += " / " + value;
 	}
 	
 	/**
@@ -69,6 +75,6 @@ public class Calculator {
 	 * @return - String of the operations.
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
